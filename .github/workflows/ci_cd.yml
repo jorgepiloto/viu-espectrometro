@@ -27,14 +27,19 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v3
 
-      - name: "Set up TeX live"
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: |
-            src/betterposter.cls
-            src/documentation.tex
-            src/ci_cd.tex
-            src/metapackage.tex
+      - name: "Install LaTeX packages"
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-base \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-science
+
 
       - name: "Build posters"
         run: make all
