@@ -29,6 +29,12 @@ jobs:
 
       - name: "Set up TeX live"
         uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            src/betterposter.cls
+            src/documentation.tex
+            src/ci_cd.tex
+            src/metapackage.tex
 
       - name: "Build posters"
         run: make all
