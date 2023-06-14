@@ -43,3 +43,20 @@ jobs:
         with:
           name: posters
           path: out/*.pdf
+
+
+  deploy-posters:
+    name: "Deploy posters"
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    needs: build-posters
+    steps:
+
+      - name: "Download poster artifacts"
+        uses: actions/download-artifact@v2
+
+      - name: "Deploy to GitHub Pages"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: posters
