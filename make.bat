@@ -1,34 +1,37 @@
-REM make.bat
+@echo off
+REM Makefile.bat
 
-REM Set the source directory
+REM Declare the source directory
 SET SRC_DIR=src
 
-REM Find TeX files
-FOR /R "%SRC_DIR%" %%F IN (*.tex) DO (
-    SET "TEX_FILES=!TEX_FILES! "%%F""
-)
+REM Declare the TeX files
+SET TEX_FILES=%SRC_DIR%\*.tex
 
-REM Set the output directory
+REM Declare the output directory
 SET OUT_DIR=out
 
-REM Set the TeX compiler
+REM Specify the TeX compiler
 SET LATEX_COMPILER=pdflatex
 
-REM Set any additional flags or options for the compiler
+REM Specify any additional flags or options for the compiler
 SET LATEX_FLAGS=-output-directory=%OUT_DIR%
 
-REM Rule to generate the PDF output
-"%OUT_DIR%/%~n1.pdf" : "%SRC_DIR%/%~n1.tex"
-    mkdir "%OUT_DIR%"
-    %LATEX_COMPILER% %LATEX_FLAGS% "%%~F"
+if "%1" == "all" goto all
+if "%1" == "clean" goto clean
 
-REM Generate PDF for each TeX file
-all: %TEX_FILES:~1%
-    EXIT /B
+:all
+	call :run_make
+	goto :eof
 
-REM Clean the output directory
-clean:
-    rmdir /S /Q "%OUT_DIR%"
+:run_make
+	mkdir %OUT_DIR%
+	FOR %%F IN ("%SRC_DIR%\*.tex") DO (
+		"%LATEX_COMPILER%" %LATEX_FLAGS% "%%~dpnxF"
+	)
+	goto :eof
+
+:clean
+	IF EXIST "%OUT_DIR%" rd /s /q "%OUT_DIR%"
 
 REM Phony targets
-.PHONY: all clean
+:PHONY
