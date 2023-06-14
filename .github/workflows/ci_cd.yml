@@ -60,3 +60,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: posters
+          cname: scipy2023.pyansys.com
