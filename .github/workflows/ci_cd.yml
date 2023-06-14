@@ -1,0 +1,40 @@
+name: CI
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+env:
+  MAIN_PYTHON_VERSION: '3.10'
+  DOCUMENTATION_CNAME: 'ansys.github.io/actions'
+  test-library-name: 'ansys-actions'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  build-posters:
+    name: "Build posters"
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "Set up TeX live"
+        uses: xu-cheng/latex-action@v2
+
+      - name: "Build posters"
+        run: make all
+
+      - name: "Upload posters"
+        uses: actions/upload-artifact@v2
+        with:
+          name: posters
+          path: out

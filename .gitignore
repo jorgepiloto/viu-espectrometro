@@ -1,0 +1,13 @@
+# Ignore extra files from LaTeX compilation
+*.lof
+*.lot
+*.aux
+*.log
+*.out
+*.toc
+*.gz
+*.bbl
+*.bcf
+*.blg
+*blx.bib
+*run.xml
