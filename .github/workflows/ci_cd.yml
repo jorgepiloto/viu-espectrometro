@@ -8,11 +8,6 @@ on:
     branches:
       - main
 
-env:
-  MAIN_PYTHON_VERSION: '3.10'
-  DOCUMENTATION_CNAME: 'ansys.github.io/actions'
-  test-library-name: 'ansys-actions'
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -40,7 +35,6 @@ jobs:
             texlive-latex-extra \
             texlive-science
 
-
       - name: "Build posters"
         run: make all
 
@@ -48,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: posters
-          path: out
+          path: out/*.pdf
