@@ -5,7 +5,7 @@ the PyAnsys Core Team for SciPyConf'23.
 
 * [Ansys GitHub actions](https://friendly-adventure-n176e9w.pages.github.io/ci_cd.pdf)
 * [PyAnsys Metapackage](https://friendly-adventure-n176e9w.pages.github.io/metapackage.pdf)
-* [PyAnsys Sphinx Theme and Documentation Poster](https://friendly-adventure-n176e9w.pages.github.io/documentation.pdf)
+* [Ansys Sphinx Theme and Documentation](https://friendly-adventure-n176e9w.pages.github.io/documentation.pdf)
 
 
 ## Generate your poster
