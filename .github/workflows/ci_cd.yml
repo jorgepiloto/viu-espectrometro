@@ -44,10 +44,10 @@ jobs:
             texlive-latex-extra \
             texlive-science
 
-      - name: Install ghostscript
+      - name: "Install ghostscript"
         run: sudo apt install ghostscript
 
-      - name: Change ImageMagick security policy
+      - name: "Change ImageMagick security policy"
         run: |
           DQT='"'
           SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
@@ -67,7 +67,7 @@ jobs:
         run: |
           make -C doc html
 
-      - name: Prepare files for gh-pages deployment
+      - name: "Prepare files for gh-pages deployment"
         run: |
           mkdir gh-pages-docs
           cp out/{*.pdf,*.png} gh-pages-docs/
@@ -90,7 +90,11 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: gh-pages-docs
+          path: gh-pages-docs
 
+      - name: "Display structure of downloaded files"
+        run: ls -R
+  
       - name: "Deploy to GitHub Pages"
         uses: peaceiris/actions-gh-pages@v3
         with:
