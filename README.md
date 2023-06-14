@@ -3,8 +3,9 @@
 This repository contains the source code that builds all posters presented by
 the PyAnsys Core Team for SciPyConf'23.
 
-
-TODO: add poster thumbnails in here
+* [Ansys GitHub actions](https://friendly-adventure-n176e9w.pages.github.io/ci_cd.pdf)
+* [PyAnsys Metapackage](https://friendly-adventure-n176e9w.pages.github.io/metapackage.pdf)
+* [PyAnsys Sphinx Theme and Documentation Poster](https://friendly-adventure-n176e9w.pages.github.io/documentation.pdf)
 
 
 ## Generate your poster
