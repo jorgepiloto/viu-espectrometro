@@ -39,16 +39,19 @@
 
 %% Colours
 \RequirePackage{xcolor}
-\definecolor{imperialblue}{RGB}{0,62,116}
 \definecolor{empirical}{RGB}{0,77,64}
 \definecolor{theory}{RGB}{26,35,126}
 \definecolor{methods}{RGB}{140,22,22}
 \definecolor{intervention}{RGB}{255,213,79}
+\definecolor{ansysGold}{RGB}{255, 183, 27}
+\definecolor{ansysBronze}{RGB}{200, 146, 17}
+\definecolor{ansysBlue}{RGB}{30, 109, 220}
+\definecolor{imperialblue}{RGB}{0,62,116}
 
-\newcommand{\columnbackgroundcolor}{white}
-\newcommand{\columnfontcolor}{black}
-\newcommand{\maincolumnbackgroundcolor}{imperialblue}
-\newcommand{\maincolumnfontcolor}{white}
+\newcommand{\columnbackgroundcolor}{black}
+\newcommand{\columnfontcolor}{white}
+\newcommand{\maincolumnbackgroundcolor}{ansysGold}
+\newcommand{\maincolumnfontcolor}{black}
 
 %% Graphics
 \RequirePackage{graphicx}
@@ -57,7 +60,6 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
-
 
 
 %%%% SIZE COMMANDS
@@ -214,7 +216,7 @@
 
 %% Author command
 \renewcommand{\author}[1]{
-{\color{gray}\fontsizeauthor
+{\color{lightgray}\fontsizeauthor
 #1
 }\\[-1.0em]
 
@@ -222,9 +224,9 @@
 
 %% Institution command
 \newcommand{\institution}[1]{
-\vspace{-1em}
+\vspace{-.25em}
 {\color{gray}
 #1
-}\\[-1.0em]
+}\\[-2.0em]
 
 }
