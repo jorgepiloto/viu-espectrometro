@@ -8,53 +8,6 @@
 
 \documentclass[a0paper,fleqn]{src/betterposter}
 
-%%%% Uncomment the following commands to customise the format
-
-%% Setting the width of columns
-% Left column
-%\setlength{\leftbarwidth}{0.25\paperwidth}
-% Right column
-%\setlength{\rightbarwidth}{0.25\paperwidth}
-
-%% Setting the column margins
-% Horizontal margin
-%\setlength{\columnmarginvertical}{0.05\paperheight}
-% Vertical margin
-%\setlength{\columnmarginhorizontal}{0.05\paperheight}
-% Horizontal margin for the main column
-%\setlength{\maincolumnmarginvertical}{0.15\paperheight}
-% Vertical margin for the main column
-%\setlength{\maincolumnmarginhorizontal}{0.15\paperheight}
-
-%% Changing font sizes
-% Text font
-%\renewcommand{\fontsizestandard}{\fontsize{28}{35} \selectfont}
-% Main column font
-%\renewcommand{\fontsizemain}{\fontsize{28}{35} \selectfont}
-% Title font
-%\renewcommand{\fontsizetitle}{\fontsize{28}{35} \selectfont}
-% Author font
-%\renewcommand{\fontsizeauthor}{\fontsize{28}{35} \selectfont}
-% Section font
-%\renewcommand{\fontsizesection}{\fontsize{28}{35} \selectfont}
-
-%% Changing font sizes for a specific text segment
-% Place the text inside brackets:
-% {\fontsize{28}{35} \selectfont Your text goes here}
-
-%% Changing colours
-% Background of side columns
-%\renewcommand{\columnbackgroundcolor}{black}
-% Font of side columns
-%\renewcommand{\columnfontcolor}{gray}
-% Background of main column
-%\renewcommand{\maincolumnbackgroundcolor}{empirical}
-%\renewcommand{\maincolumnbackgroundcolor}{theory}
-%\renewcommand{\maincolumnbackgroundcolor}{methods}
-%\renewcommand{\maincolumnbackgroundcolor}{intervention}
-% Font of main column
-%\renewcommand{\maincolumnfontcolor}{gray}
-
 \begin{document}	
 \betterposter{
 %%%%%%%% MAIN COLUMN
@@ -62,16 +15,29 @@
 \maincolumn{
 %%%% Main space
 
-\textbf{Main finding} goes here,
-\\translated into \textbf{plain English}.
-\\\textbf{Emphasize} the important words.
+\textbf{From code to deployment}\\
+\fontsize{75}{77}\selectfont % Set the font size to 12pt with a baseline skip of 14pt
+
+Pull-request workflow\\[1.5cm]
+\includegraphics[width=\textwidth]{img/ci_cd/ci_cd_pr}\\
+
+Main branch workflow\\[1.5cm]
+\includegraphics[width=\textwidth]{img/ci_cd/ci_cd_main}\\
+
+Release workflow\\[1.5cm]
+\includegraphics[width=\textwidth]{img/ci_cd/ci_cd_release}\\
+
+\fontsize{85}{87}\selectfont
+Use ansys/actions@v4\\[1cm]
+
+\vspace{-18cm}
+
 }{
 %%%% Bottom space
 
 %% QR code
-\qrcode{img/example/qrcode}{img/general/smartphoneBlack}{
-\textbf{Take a picture} to
-\\download the full paper
+\qrcode{img/ci_cd/qrcode.png}{img/general/smartphoneBlack}{
+\textbf{Visit https:\slash \slash actions.docs.ansys.com for more information}
 }
 % Smartphone icon
 % Author: Freepik
@@ -88,68 +54,63 @@
 }{
 %%%%%%%% LEFT COLUMN
 
-\title{Ansys gitHub Actions}
-\author{Mike Morrison}
-\author{Rafael Bailo}
-\institution{Optional Institution Under Name}
+\title{CI\slash CD pipelines for scientists}
+\author{Jorge Martinez}
+\institution{Ansys}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Introduction}
-Here is an itemised list:
-\begin{itemize}
-\item The first item.
-\item The second item.
-\item The third item.
-\end{itemize}
+Continuous integration (CI) and continuous delivery (CD) is used for empowering
+software development through automated integration and deployment,
+revolutionizing efficiency and reliability in the software delivery lifecycle.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png}A Diagram}
-Here is a diagram:
-\begin{center}
-% Linear regression
-% Author: Henri Menke
-% Retrieved from: http://www.texample.net/tikz/examples/linear-regression/
-\includegraphics[width=\textwidth]{img/example/tikzexample1}
-\end{center}
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Code style}
+Enforcing consistency and code quality through automated analysis, ensuring
+clean and maintainable software development practices.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Fundamental Theorem\\of Calculus}
-If $f$ is continuous on the closed interval $[a,b]$ and $F$ is the indefinite integral of $f$ on $[a,b]$, then
-\begin{equation}
-\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).
-\end{equation}
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Doc style}
+Elevating documentation quality through automated analysis, fostering clear and
+consistent communication for comprehensive software documentation.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Conclusion}
-This is a great poster format!
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Doc build}
+Streamlining the creation of documentation through automated processes, enabling
+efficient and accurate documentation generation for seamless project
+collaboration.
+
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Tests}
+Enhancing software quality through systematic and efficient test automation,
+ensuring robustness, reliability and code coverage in the development process.
+
 
 %% This fills the space between the content and the logo
-\vfill
+%\vfill
 
 %% Institution logo
-\includegraphics[width=\textwidth]{img/general/pyansys_dark}\\
+%\includegraphics[width=\textwidth]{img/general/pyansys_dark}\\
 
 }{
 %%%%%%%% RIGHT COLUMN
 
-Here you can add \textbf{supplementary material}. For instance, a new diagram:
-\begin{center}
-% Commutative diagram with edges passing under/over
-% Author: Stefan Kottwitz, http://texblog.net/
-% Retrieved from: http://www.texample.net/tikz/examples/commutative-diagram/
-\includegraphics[width=\textwidth]{img/example/tikzexample2}
-\end{center}
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Build library}
+Leveraging pre-built components and artifacts to expedite software development,
+enhancing efficiency and scalability in the creation of complex applications.
 
-Some cute ducklings:
-\begin{center}
-% Picture of ducklings
-% Author: Magda Ehlers, https://www.pexels.com/@magda-ehlers-pexels
-% Retrieved from: https://www.pexels.com/photo/selective-focus-photo-of-flock-of-ducklings-perching-on-gray-concrete-pavement-1300355/
-\includegraphics[width=\textwidth]{img/example/ducklings}
-\end{center}
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Release}
+Leveraging pre-built components and artifacts to expedite software development,
+enhancing efficiency and scalability in the creation of complex applications.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} What is PyAnsys?}
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Doc deploy}
+Streamlining the distribution and accessibility of developer and user
+documentation. Empowering teams and customers with up-to-date resources for
+seamless collaboration and knowledge sharing.
+
+\vfil
+
+\includegraphics[width=\textwidth]{img/general/pyansys_dark}\\
+%\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} What is PyAnsys?}
 The PyAnsys project is a collection of Python packages that enable the use of Ansys products through Python.
-Much effort is underway to continue expanding and developing repositories in the Ansys GitHub organization.
 \\
 \newline
-\textbf{Any doubts?} \\Contact us at pyansys.core@ansys.com! We will be happy to help you out.
+\textbf{Any doubts?} \\Contact us at pyansys.core@ansys.com!
 \\
 \newline
 
