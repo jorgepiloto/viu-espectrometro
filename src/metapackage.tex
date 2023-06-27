@@ -8,53 +8,6 @@
 
 \documentclass[a0paper,fleqn]{src/betterposter}
 
-%%%% Uncomment the following commands to customise the format
-
-%% Setting the width of columns
-% Left column
-%\setlength{\leftbarwidth}{0.25\paperwidth}
-% Right column
-%\setlength{\rightbarwidth}{0.25\paperwidth}
-
-%% Setting the column margins
-% Horizontal margin
-%\setlength{\columnmarginvertical}{0.05\paperheight}
-% Vertical margin
-%\setlength{\columnmarginhorizontal}{0.05\paperheight}
-% Horizontal margin for the main column
-%\setlength{\maincolumnmarginvertical}{0.15\paperheight}
-% Vertical margin for the main column
-%\setlength{\maincolumnmarginhorizontal}{0.15\paperheight}
-
-%% Changing font sizes
-% Text font
-%\renewcommand{\fontsizestandard}{\fontsize{28}{35} \selectfont}
-% Main column font
-%\renewcommand{\fontsizemain}{\fontsize{28}{35} \selectfont}
-% Title font
-%\renewcommand{\fontsizetitle}{\fontsize{28}{35} \selectfont}
-% Author font
-%\renewcommand{\fontsizeauthor}{\fontsize{28}{35} \selectfont}
-% Section font
-%\renewcommand{\fontsizesection}{\fontsize{28}{35} \selectfont}
-
-%% Changing font sizes for a specific text segment
-% Place the text inside brackets:
-% {\fontsize{28}{35} \selectfont Your text goes here}
-
-%% Changing colours
-% Background of side columns
-%\renewcommand{\columnbackgroundcolor}{black}
-% Font of side columns
-%\renewcommand{\columnfontcolor}{gray}
-% Background of main column
-%\renewcommand{\maincolumnbackgroundcolor}{empirical}
-%\renewcommand{\maincolumnbackgroundcolor}{theory}
-%\renewcommand{\maincolumnbackgroundcolor}{methods}
-%\renewcommand{\maincolumnbackgroundcolor}{intervention}
-% Font of main column
-%\renewcommand{\maincolumnfontcolor}{gray}
-
 \begin{document}	
 \betterposter{
 %%%%%%%% MAIN COLUMN
@@ -62,16 +15,23 @@
 \maincolumn{
 %%%% Main space
 
-\textbf{Main finding} goes here,
-\\translated into \textbf{plain English}.
-\\\textbf{Emphasize} the important words.
+\textbf{Metapackage structure}\\
+\fontsize{75}{77}\selectfont % Set the font size to 12pt with a baseline skip of 14pt
+
+Targets\\[1.5cm]
+\includegraphics[width=\textwidth]{img/metapackage/deps}\\
+
+File structure\\[1.5cm]
+\includegraphics[width=.30\textwidth]{img/metapackage/file_structure}\\
+
+\vspace{-14cm}
 }{
 %%%% Bottom space
 
 %% QR code
-\qrcode{img/example/qrcode}{img/general/smartphoneBlack}{
-\textbf{Take a picture} to
-\\download the full paper
+\qrcode{img/metapackage/qrcode.png}{img/general/smartphoneBlack}{
+\textbf{Want to see an example repository?} \\ \checkmark Check https:\slash \slash github.com/ansys/pyansys \\ \newline \textbf{Any doubts?} \\ \checkmark Don't be shy and start the conversation!
+
 }
 % Smartphone icon
 % Author: Freepik
@@ -88,68 +48,54 @@
 }{
 %%%%%%%% LEFT COLUMN
 
-\title{The Title}
-\author{Mike Morrison}
-\author{Rafael Bailo}
-\institution{Optional Institution Under Name}
+\title{Python \\metapackages}
+\author{Roberto Pastor Muela}
+\institution{Ansys}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png}Introduction}
-Here is an itemised list:
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Introduction}
+Organizations experience problems when distributing multiple packages. What if you could easily distribute
+all your packages under one single package? Python \textit{metapackages} are here to solve your problems!
+
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} The \textit{metapackage}\\concept}
+Python \textit{metapackages} are empty Python libraries that only contain a version attribute.
+However, they use their dependencies section to declare all the required libraries that need
+to be installed. This trick can be used to install all the desired projects of a large community.
+
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Example use case}
+Say you have a Python metapackage called \textit{my-package}. By installing it, users would get your
+defined dependencies, and also have access to additional targets you define. See the graph on the main
+section of this poster.
+
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} File structure}
+\vspace{-2cm}
 \begin{itemize}
-\item The first item.
-\item The second item.
-\item The third item.
+    \item A \texttt{src/<my-package>} folder with an \texttt{\_\_init\_\_.py} file. This file could simply contain your metapackage version.
+    \item A build system requirements file (i.e. \texttt{pyproject.toml}, \texttt{setup.py}), with your dependencies and extra targets. Dependency versions can be pinned down (for example, \texttt{numpy==1.21.0}) or flexible (\texttt{numpy}).
 \end{itemize}
-
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png}A Diagram}
-Here is a diagram:
-\begin{center}
-% Linear regression
-% Author: Henri Menke
-% Retrieved from: http://www.texample.net/tikz/examples/linear-regression/
-\includegraphics[width=\textwidth]{img/example/tikzexample1}
-\end{center}
-
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png}Fundamental Theorem\\of Calculus}
-If $f$ is continuous on the closed interval $[a,b]$ and $F$ is the indefinite integral of $f$ on $[a,b]$, then
-\begin{equation}
-\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).
-\end{equation}
-
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png}Conclusion}
-This is a great poster format!
 
 %% This fills the space between the content and the logo
 \vfill
 
-%% Institution logo
-\includegraphics[width=\textwidth]{img/general/pyansys_dark}\\
-
 }{
 %%%%%%%% RIGHT COLUMN
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Benefits of using a\\ metapackage}
+\vspace{-2cm}
+\begin{itemize}
+    \item \underline{\textbf{One-stop shop}}: all your Python packages are delivered together and are easily made available to end-users.
+    \item \underline{\textbf{Ensure dependencies compatibility}}: we ensure no incompatibility issues amongst its dependencies occur (by using CI/CD for building the package).
+    \item \underline{\textbf{Easier install process}}: rather than installing each package individually, getting all of them together with one install command makes your life easier.
+    \item \underline{\textbf{Multiple targets}}: the metapackage does not only need to have \textit{required} dependencies. It may also have extra targets (i.e. additional dependencies) for other purposes!
+    \item \underline{\textbf{Pinned versions}} (optional): dependency updates sometimes leads to incompatibilities which users are not aware of. By having a metapackage that pins down your dependencies to a certain version, you make sure that for a given version your scripts are compatible with all the dependent libraries. This makes dependency handling much easier for end users.
 
-Here you can add \textbf{supplementary material}. For instance, a new diagram:
-\begin{center}
-% Commutative diagram with edges passing under/over
-% Author: Stefan Kottwitz, http://texblog.net/
-% Retrieved from: http://www.texample.net/tikz/examples/commutative-diagram/
-\includegraphics[width=\textwidth]{img/example/tikzexample2}
-\end{center}
+\end{itemize}
+\vfill
 
-Some cute ducklings:
-\begin{center}
-% Picture of ducklings
-% Author: Magda Ehlers, https://www.pexels.com/@magda-ehlers-pexels
-% Retrieved from: https://www.pexels.com/photo/selective-focus-photo-of-flock-of-ducklings-perching-on-gray-concrete-pavement-1300355/
-\includegraphics[width=\textwidth]{img/example/ducklings}
-\end{center}
-
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} What is PyAnsys?}
+%% Institution logo
+\includegraphics[width=\textwidth]{img/general/pyansys_dark}\\
 The PyAnsys project is a collection of Python packages that enable the use of Ansys products through Python.
-Much effort is underway to continue expanding and developing repositories in the Ansys GitHub organization.
 \\
 \newline
-\textbf{Any doubts?} \\Contact us at pyansys.core@ansys.com! We will be happy to help you out.
+\textbf{Any doubts?} \\Contact us at pyansys.core@ansys.com!
 \\
 \newline
 
