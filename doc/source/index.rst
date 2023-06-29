@@ -1,7 +1,7 @@
 SciPyConf 2023 Ansys posters
 ============================
 
-These are all posters presented by the PyAnsys Core Team for SciPyConf'23.
+These are all posters presented by the PyAnsys Core Team for `SciPyConf'23 <https://www.scipy2023.scipy.org/>`_.
 
 Hope you enjoy them!
 

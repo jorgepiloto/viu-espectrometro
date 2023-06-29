@@ -1,7 +1,7 @@
 # Ansys posters for SciPy Conference 2023
 
 This repository contains the source code that builds all posters presented by
-the PyAnsys Core Team for SciPyConf'23.
+the PyAnsys Core Team for [SciPyConf'23](https://www.scipy2023.scipy.org/).
 
 * [Ansys GitHub actions](https://scipy2023.pyansys.com/ci_cd.pdf)
 * [PyAnsys Metapackage](https://scipy2023.pyansys.com/metapackage.pdf)
