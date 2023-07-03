@@ -9,21 +9,21 @@ Hope you enjoy them!
 
     .. grid-item::
 
-        .. card:: Ansys GitHub Actions
+        .. card:: CI/CD pipelines for scientists
             :img-top: https://scipy2023.pyansys.com/ci_cd.png
             :link: https://scipy2023.pyansys.com/ci_cd.pdf
 
 
     .. grid-item::
 
-        .. card:: PyAnsys Metapackage
+        .. card:: Python metapackages
             :img-top: https://scipy2023.pyansys.com/metapackage.png
             :link: https://scipy2023.pyansys.com/metapackage.pdf
             
 
     .. grid-item::
 
-        .. card:: Ansys Sphinx Theme and Documentation
+        .. card:: Accessible documentation for everyone
             :img-top: https://scipy2023.pyansys.com/documentation.png
             :link: https://scipy2023.pyansys.com/documentation.pdf
 
