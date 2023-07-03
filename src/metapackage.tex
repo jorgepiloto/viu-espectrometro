@@ -32,7 +32,7 @@ Metapackage layout\\[1.5cm]
 
 %% QR code
 \qrcode{img/metapackage/qrcode.png}{img/general/smartphoneBlack}{
-\textbf{Want to see an example repository?} \\ \checkmark Check https:\slash \slash github.com/ansys/pyansys \\ \newline \textbf{Any doubts?} \\ \checkmark Don't be shy and start the conversation!
+\textbf{Want to see an example repository?} \\ \checkmark Visit https:\slash \slash github.com/ansys/pyansys \\ \newline \textbf{Any questions?} \\ \checkmark Don't be shy and start the conversation!
 
 }
 % Smartphone icon
@@ -56,23 +56,23 @@ Metapackage layout\\[1.5cm]
 
 \section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Introduction}
 Organizations experience problems when distributing multiple packages. What if you could easily distribute
-all your packages under one single package? Python \textit{metapackages} are here to solve your problems!
+all your packages in one single package? Python \textit{metapackages} are here to solve your problems!
 
 \section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} The \textit{metapackage}\\concept}
-Python \textit{metapackages} are empty Python libraries that only contain a version attribute.
-However, they use their dependencies section to declare all the required libraries that need
-to be installed. This trick can be used to install all the desired projects of a large community.
+Python \textit{metapackages} are empty Python libraries that contain only a version attribute.
+However, they use a "dependencies" section to declare all libraries that are required for the
+installation. This trick can be used to install all the desired projects of a large community.
 
 \section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Example use case}
-Say you have a Python metapackage called \textit{my-package}. By installing it, users would get your
-defined dependencies, and also have access to additional targets you define. See the graph on the main
+Say you have a Python metapackage called \textit{my-package}. By installing it, users get your
+defined dependencies and also have access to additional targets you define. See the graph on the main
 section of this poster.
 
 \section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} File structure}
 \vspace{-2cm}
 \begin{itemize}
-    \item A \texttt{src/<my-package>} folder with an \texttt{\_\_init\_\_.py} file. This file could simply contain your metapackage version.
-    \item A build system requirements file (i.e. \texttt{pyproject.toml}, \texttt{setup.py}), with your dependencies and extra targets. Dependency versions can be pinned down (for example, \texttt{numpy==1.21.0}) or flexible (\texttt{numpy}).
+    \item The \texttt{src/<my-package>} folder has an \texttt{\_\_init\_\_.py} file that simply contains your metapackage version.
+    \item A build system requirements file, \texttt{pyproject.toml}, \texttt{setup.py}), contains with your dependencies and extra targets. Dependency versions can be pinned down. For example, \texttt{numpy==1.21.0}) or flexible (\texttt{numpy}).
 \end{itemize}
 
 %% This fills the space between the content and the logo
@@ -83,11 +83,11 @@ section of this poster.
 \section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Benefits of using a\\ metapackage}
 \vspace{-2cm}
 \begin{itemize}
-    \item \underline{\textbf{One-stop shop}}: all your Python packages are delivered together and are easily made available to end-users.
-    \item \underline{\textbf{Ensure dependencies compatibility}}: we ensure no incompatibility issues amongst its dependencies occur (by using CI/CD for building the package).
-    \item \underline{\textbf{Easier install process}}: rather than installing each package individually, getting all of them together with one install command makes your life easier.
-    \item \underline{\textbf{Multiple targets}}: the metapackage does not only need to have \textit{required} dependencies. It may also have extra targets (i.e. additional dependencies) for other purposes!
-    \item \underline{\textbf{Pinned versions}} (optional): dependency updates sometimes leads to incompatibilities which users are not aware of. By having a metapackage that pins down your dependencies to a certain version, you make sure that for a given version your scripts are compatible with all the dependent libraries. This makes dependency handling much easier for end users.
+    \item \underline{\textbf{One-stop shop}}: All your Python packages are delivered together and are easily made available to end users.
+    \item \underline{\textbf{Dependencies compatibility}}: No incompatibility issues amongst dependencies can occur (when using CI/CD for building the package).
+    \item \underline{\textbf{Easier install process}}: Rather than installing each package individually, install all packages with only one installation command.
+    \item \underline{\textbf{Multiple targets}}: The metapackage may not only have \textit{required} dependencies, it may also have extra targets (additional dependencies) for other purposes.
+    \item \underline{\textbf{Pinned versions}} (optional): Dependency updates sometimes lead to incompatibilities that users are not aware of. By having a metapackage that pins down your dependencies to a certain version, you make sure that for a given version your scripts are compatible with all the dependent libraries. This makes dependency handling much easier for end users.
 
 \end{itemize}
 \vfill
@@ -97,12 +97,12 @@ section of this poster.
 The PyAnsys project is a collection of Python packages that enable the use of Ansys products through Python.
 \\
 \newline
-\textbf{Any doubts?} \\Contact us at pyansys.core@ansys.com!
+\textbf{Any questions?} \\Contact us at pyansys.core@ansys.com.
 \\
 \newline
 
 \qrcode{img/general/pyansys_qrcode.png}{img/general/smartphoneBlack}{
-\textbf{\huge{Check our docs for more\\information on PyAnsys!\\https:\slash \slash docs.pyansys.com }}
+\textbf{\huge{See our docs for more\\information on PyAnsys:\\https:\slash \slash docs.pyansys.com }}
 }
 }
 \end{document}

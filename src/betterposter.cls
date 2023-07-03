@@ -113,7 +113,9 @@
 \setlength{\maincolumnmarginvertical}{0.07\paperheight}
 \setlength{\maincolumnmarginhorizontal}{0.07\paperheight}
 
-
+%% Avoid hyphenation under 4 letters
+\lefthyphenmin=4
+\righthyphenmin=4
 
 %%%% TEMPLATE COMMANDS
 
