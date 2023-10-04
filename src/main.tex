@@ -15,17 +15,14 @@
 \maincolumn{
 %%%% Main space
 
-\textbf{From code to deployment}\\
+\textbf{El espectrómetro por dentro}\\
 \fontsize{75}{77}\selectfont % Set the font size to 12pt with a baseline skip of 14pt
 
 Pull request workflow\\[1.5cm]
-\includegraphics[width=\textwidth]{img/ci_cd/ci_cd_pr}\\
 
 Main branch workflow\\[1.5cm]
-\includegraphics[width=\textwidth]{img/ci_cd/ci_cd_main}\\
 
 Release workflow\\[1.5cm]
-\includegraphics[width=\textwidth]{img/ci_cd/ci_cd_release}\\
 
 \fontsize{85}{87}\selectfont
 Use ansys/actions@v4\\[1cm]
@@ -36,86 +33,66 @@ Use ansys/actions@v4\\[1cm]
 %%%% Bottom space
 
 %% QR code
-\qrcode{img/ci_cd/qrcode.png}{img/general/smartphoneBlack}{
-\textbf{Want to see our actions?} \\ \checkmark Visit https:\slash \slash actions.docs.ansys.com for more information. \\ \newline \textbf{Have questions?} \\ \checkmark Don't be shy and start the conversation!
+\qrcode{img/qrcode.png}{img/general/smartphoneBlack}{
+\textbf{Fabrica tu propio espectrómetro} \\ Visita https:\slash \slash www.youtube.com \slash watch?v=023hmXZmGSc
 }
-% Smartphone icon
-% Author: Freepik
-% Retrieved from: https://www.flaticon.com/free-icon/smartphone_65680
-
-%% Compact QR code (comment the previous command and uncomment this one to switch)
-%\compactqrcode{img/example/qrcode}{
-%\textbf{Take a picture} to
-%\\download the full paper
-%}
 
 }
 
 }{
 %%%%%%%% LEFT COLUMN
 
-\title{CI\slash CD pipelines for scientists}
+\title{Funcionamiento}
 \author{Jorge Martinez}
-\institution{Ansys}
+\institution{Universidad Internacional de Valencia}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Introduction}
-Continuous integration (CI) and continuous delivery (CD) is used for empowering
-software development through automated integration and deployment,
-revolutionizing efficiency and reliability in the software delivery lifecycle.
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 1. Entrada de luz}
+El espectrografo comienza su funcionamiento cuando la luz incidente entra a
+través de una rendija o una abertura en su extremo, lo que limita la cantidad de
+luz que se analizará y asegura que la fuente de luz sea coherente.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Code style}
-Enforces consistency and code quality through automated analysis, ensuring
-clean and maintainable software development practices.
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 2. Collimación}
+La luz entrante luego pasa a través de una lente colimadora. Esta lente tiene la
+función de hacer que los rayos de luz sean paralelos, lo que facilita su
+procesamiento en etapas posteriores.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Doc style}
-Elevates documentation quality through automated analysis, fostering clear and
-consistent communication for comprehensive software documentation.
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 3. Reducción de la luz dispersa}
+Para eliminar la luz dispersa y mejorar la calidad del espectro, se utiliza un
+colimador adicional. Esto garantiza que la luz que llega al siguiente paso sea
+lo más paralela posible.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Doc build}
-Streamlines the creation of documentation through automated processes, enabling
-efficient and accurate documentation generation for seamless project
-collaboration.
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 4. Dispersión}
+La luz colimada incide en un prisma o una rejilla de difracción. Estos elementos
+son los responsables de descomponer la luz en sus diferentes longitudes de onda,
+lo que crea un patrón de dispersión. El prisma refracta la luz, mientras que la
+rejilla de difracción la hace interferir de manera constructiva o destructiva,
+separando las longitudes de onda.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Tests}
-Enhances software quality through systematic and efficient test automation,
-ensuring robustness, reliability, and code coverage in the development process.
+}{ % RIGHT COLUMN
 
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 5. Detección}
+El patrón de dispersión resultante se proyecta en una superficie detectora, como
+un CCD (dispositivo de carga acoplada) o una película sensible a la luz. La
+intensidad de la luz en cada punto del patrón se registra como una señal
+eléctrica.
 
-%% This fills the space between the content and the logo
-%\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 6. Análisis de datos}
+La señal eléctrica generada por el detector se convierte en un espectro mediante
+un proceso de análisis de datos. Esto implica registrar la intensidad de la luz
+a diferentes longitudes de onda y, a menudo, se realiza mediante un software
+especializado.
 
-%% Institution logo
-%\includegraphics[width=\textwidth]{img/general/pyansys_dark}\\
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 7. Interpretación del espectro}
+El espectro resultante muestra picos o líneas que corresponden a las diferentes
+longitudes de onda presentes en la luz original. Estos picos proporcionan
+información valiosa sobre la composición química, la temperatura y otras
+propiedades de la fuente de luz. 
 
-}{
-%%%%%%%% RIGHT COLUMN
+\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} 8. Poder de resolucion}
+La resolución de un espectrómetro ($R$) nace de la rejilla de difracción y se
+puede expresar mediante la ecuación $R = mN$, donde $R$ es la resolución, $m$ es
+el orden de difracción y $N$ es el número de líneas por unidad de longitud en la
+rejilla. Cuanto mayor sea $R$, mejor será la capacidad del espectrómetro para distinguir entre longitudes de onda cercanas. Además, el ángulo de incidencia ($\theta$) también influye en la resolución a través de la ecuación de la red de difracción de Bragg. 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Build library}
-Guarantees the creation of components and artifacts for efficient software distribution. Verifies
-that the artifacts include the proper metadata.
-
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Release}
-Distributes pre-built components and artifacts to expedite software development,
-enhancing efficiency and scalability in the creation of complex applications.
-
-\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} Doc deploy}
-Streamlines the distribution and accessibility of developer and user
-documentation, empowering teams and customers with up-to-date resources for
-seamless collaboration and knowledge sharing.
-
-\vfill
-
-\includegraphics[width=\textwidth]{img/general/pyansys_dark}\\
-%\section{\includegraphics[height=\fontcharht\font`\S]{img/general/slash.png} What is PyAnsys?}
-The PyAnsys project is a collection of Python packages that enable the use of Ansys products through Python.
-\\
-\newline
-\textbf{Any questions?} \\Contact us at pyansys.core@ansys.com.
-\\
-\newline
-
-\qrcode{img/general/pyansys_qrcode.png}{img/general/smartphoneBlack}{
-\textbf{\huge{See our docs for more\\information on PyAnsys:\\https:\slash \slash docs.pyansys.com }}
-}
 }
 \end{document}

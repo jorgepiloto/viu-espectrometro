@@ -19,7 +19,7 @@ LATEX_FLAGS = -output-directory=$(OUT_DIR)
 $(OUT_DIR)/%.pdf: $(SRC_DIR)/%.tex
 	mkdir -p $(OUT_DIR)
 	$(LATEX_COMPILER) $(LATEX_FLAGS) $<
-	convert -density 150 -scene 1 $@ $(@:.pdf=.png)
+	#convert -density 150 -scene 1 $@ $(@:.pdf=.png)
 
 # Generate PDF for each TeX file
 all: $(patsubst $(SRC_DIR)/%.tex, $(OUT_DIR)/%.pdf, $(TEX_FILES))
